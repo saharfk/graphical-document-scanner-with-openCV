@@ -22,7 +22,7 @@ image = cv2.imread('1.jpg')
 # resize image so it can be processed
 # choose optimal dimensions such that important content is not lost
 image = cv2.resize(image, (1500, 880))
-cv2.imshow("Outline.jpg", image)
+
 # *************************
 
 # creating copy of original image
@@ -51,9 +51,6 @@ cv2.imshow("Original Edged.jpg", orig_edged)
 (contours, _) = cv2.findContours(edged, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
 contours = sorted(contours, key=cv2.contourArea, reverse=True)
 
-# x,y,w,h = cv2.boundingRect(contours[0])
-# cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 0)
-
 # get approximate contour
 for c in contours:
     p = cv2.arcLength(c, True)
@@ -72,23 +69,20 @@ dst = cv2.warpPerspective(orig, M, (800, 800))
 
 cv2.drawContours(image, [target], -1, (0, 255, 0), 2)
 dst = cv2.cvtColor(dst, cv2.COLOR_BGR2GRAY)
-cv2.imshow("dst.jpg", dst)
+cv2.imshow("Outline.jpg", image)
+cv2.imshow("doc grayscale", dst)
 # *****************************
 
 # using thresholding on warped image to get scanned effect (If Required)
 ret2, th4 = cv2.threshold(dst, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-cv2.imshow("Otsu's.jpg", th4)
-
-
+cv2.imshow("black and white scan", th4)
 
 # other thresholding methods
 
 ret, thresh1 = cv2.threshold(dst, 127, 255, cv2.THRESH_BINARY_INV)
-cv2.imshow("Thresh Binary_INV", thresh1)
-ret, thresh2 = cv2.threshold(dst, 127, 255, cv2.THRESH_TRUNC)
-cv2.imshow("Thresh Trunch", thresh2)
-ret, thresh3 = cv2.threshold(dst, 127, 255, cv2.THRESH_TOZERO)
-cv2.imshow("Thresh TOZERO", thresh3)
+cv2.imshow("binary scan", thresh1)
+ret, thresh2 = cv2.threshold(dst, 127, 255, cv2.THRESH_TOZERO)
+cv2.imshow("gray scan", thresh2)
 
 
 cv2.waitKey(0)
