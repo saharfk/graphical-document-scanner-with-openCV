@@ -15,66 +15,66 @@ class Ui_Dialog(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(742, 381)
         Dialog.setStyleSheet("background-color: rgba(179, 218, 255, 255);\n"
-"")
+                             "")
         Dialog.setSizeGripEnabled(False)
         Dialog.setModal(False)
-        self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(90, 70, 151, 41))
-        self.pushButton.setAutoFillBackground(False)
-        self.pushButton.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton.setCheckable(False)
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_2.setGeometry(QtCore.QRect(90, 130, 151, 41))
-        self.pushButton_2.setAutoFillBackground(False)
-        self.pushButton_2.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"\n"
-"")
-        self.pushButton_2.setCheckable(False)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_3 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_3.setGeometry(QtCore.QRect(90, 190, 151, 41))
-        self.pushButton_3.setAutoFillBackground(False)
-        self.pushButton_3.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_3.setCheckable(False)
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_4 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_4.setGeometry(QtCore.QRect(90, 250, 151, 41))
-        self.pushButton_4.setAutoFillBackground(False)
-        self.pushButton_4.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_4.setCheckable(False)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.pushButton_5 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_5.setGeometry(QtCore.QRect(90, 310, 151, 41))
-        self.pushButton_5.setAutoFillBackground(False)
-        self.pushButton_5.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_5.setCheckable(False)
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.pushButton_6 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_6.setGeometry(QtCore.QRect(280, 70, 151, 41))
-        self.pushButton_6.setAutoFillBackground(False)
-        self.pushButton_6.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_6.setCheckable(False)
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_7 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_7.setGeometry(QtCore.QRect(280, 130, 151, 41))
-        self.pushButton_7.setAutoFillBackground(False)
-        self.pushButton_7.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_7.setCheckable(False)
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.pushButton_8 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_8.setGeometry(QtCore.QRect(280, 190, 151, 41))
-        self.pushButton_8.setAutoFillBackground(False)
-        self.pushButton_8.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_8.setCheckable(False)
-        self.pushButton_8.setObjectName("pushButton_8")
+        self.originalPhoto = QtWidgets.QPushButton(Dialog)
+        self.originalPhoto.setGeometry(QtCore.QRect(90, 70, 151, 41))
+        self.originalPhoto.setAutoFillBackground(False)
+        self.originalPhoto.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                         "")
+        self.originalPhoto.setCheckable(False)
+        self.originalPhoto.setObjectName("originalPhoto")
+        self.gray = QtWidgets.QPushButton(Dialog)
+        self.gray.setGeometry(QtCore.QRect(90, 130, 151, 41))
+        self.gray.setAutoFillBackground(False)
+        self.gray.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                "\n"
+                                "")
+        self.gray.setCheckable(False)
+        self.gray.setObjectName("gray")
+        self.blured = QtWidgets.QPushButton(Dialog)
+        self.blured.setGeometry(QtCore.QRect(90, 190, 151, 41))
+        self.blured.setAutoFillBackground(False)
+        self.blured.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                  "")
+        self.blured.setCheckable(False)
+        self.blured.setObjectName("blured")
+        self.edged = QtWidgets.QPushButton(Dialog)
+        self.edged.setGeometry(QtCore.QRect(90, 250, 151, 41))
+        self.edged.setAutoFillBackground(False)
+        self.edged.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                 "")
+        self.edged.setCheckable(False)
+        self.edged.setObjectName("edged")
+        self.outliner = QtWidgets.QPushButton(Dialog)
+        self.outliner.setGeometry(QtCore.QRect(90, 310, 151, 41))
+        self.outliner.setAutoFillBackground(False)
+        self.outliner.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                    "")
+        self.outliner.setCheckable(False)
+        self.outliner.setObjectName("outliner")
+        self.originalScan = QtWidgets.QPushButton(Dialog)
+        self.originalScan.setGeometry(QtCore.QRect(280, 70, 151, 41))
+        self.originalScan.setAutoFillBackground(False)
+        self.originalScan.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                        "")
+        self.originalScan.setCheckable(False)
+        self.originalScan.setObjectName("originalScan")
+        self.wrapGrayScan = QtWidgets.QPushButton(Dialog)
+        self.wrapGrayScan.setGeometry(QtCore.QRect(280, 130, 151, 41))
+        self.wrapGrayScan.setAutoFillBackground(False)
+        self.wrapGrayScan.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                        "")
+        self.wrapGrayScan.setCheckable(False)
+        self.wrapGrayScan.setObjectName("wrapGrayScan")
+        self.blackAndWhiteScan = QtWidgets.QPushButton(Dialog)
+        self.blackAndWhiteScan.setGeometry(QtCore.QRect(280, 190, 151, 41))
+        self.blackAndWhiteScan.setAutoFillBackground(False)
+        self.blackAndWhiteScan.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                             "")
+        self.blackAndWhiteScan.setCheckable(False)
+        self.blackAndWhiteScan.setObjectName("blackAndWhiteScan")
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(190, 10, 181, 41))
         font = QtGui.QFont()
@@ -85,7 +85,8 @@ class Ui_Dialog(object):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setMouseTracking(False)
-        self.label.setStyleSheet("background-color:qconicalgradient(cx:0, cy:1, angle:0, stop:0 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0))")
+        self.label.setStyleSheet(
+            "background-color:qconicalgradient(cx:0, cy:1, angle:0, stop:0 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0))")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(Dialog)
         self.label_2.setGeometry(QtCore.QRect(530, 10, 181, 41))
@@ -97,57 +98,58 @@ class Ui_Dialog(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setMouseTracking(False)
-        self.label_2.setStyleSheet("background-color:qconicalgradient(cx:0, cy:1, angle:0, stop:0 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0))")
+        self.label_2.setStyleSheet(
+            "background-color:qconicalgradient(cx:0, cy:1, angle:0, stop:0 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0))")
         self.label_2.setObjectName("label_2")
-        self.pushButton_10 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_10.setGeometry(QtCore.QRect(280, 250, 151, 41))
-        self.pushButton_10.setAutoFillBackground(False)
-        self.pushButton_10.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_10.setCheckable(False)
-        self.pushButton_10.setObjectName("pushButton_10")
-        self.pushButton_11 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_11.setGeometry(QtCore.QRect(280, 310, 151, 41))
-        self.pushButton_11.setAutoFillBackground(False)
-        self.pushButton_11.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_11.setCheckable(False)
-        self.pushButton_11.setObjectName("pushButton_11")
-        self.pushButton_9 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_9.setGeometry(QtCore.QRect(510, 190, 151, 41))
-        self.pushButton_9.setAutoFillBackground(False)
-        self.pushButton_9.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_9.setCheckable(False)
-        self.pushButton_9.setObjectName("pushButton_9")
-        self.pushButton_12 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_12.setGeometry(QtCore.QRect(510, 310, 151, 41))
-        self.pushButton_12.setAutoFillBackground(False)
-        self.pushButton_12.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_12.setCheckable(False)
-        self.pushButton_12.setObjectName("pushButton_12")
-        self.pushButton_13 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_13.setGeometry(QtCore.QRect(510, 250, 151, 41))
-        self.pushButton_13.setAutoFillBackground(False)
-        self.pushButton_13.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_13.setCheckable(False)
-        self.pushButton_13.setObjectName("pushButton_13")
-        self.pushButton_14 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_14.setGeometry(QtCore.QRect(510, 70, 151, 41))
-        self.pushButton_14.setAutoFillBackground(False)
-        self.pushButton_14.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_14.setCheckable(False)
-        self.pushButton_14.setObjectName("pushButton_14")
-        self.pushButton_15 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_15.setGeometry(QtCore.QRect(510, 130, 151, 41))
-        self.pushButton_15.setAutoFillBackground(False)
-        self.pushButton_15.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
-"")
-        self.pushButton_15.setCheckable(False)
-        self.pushButton_15.setObjectName("pushButton_15")
+        self.binaryScan = QtWidgets.QPushButton(Dialog)
+        self.binaryScan.setGeometry(QtCore.QRect(280, 250, 151, 41))
+        self.binaryScan.setAutoFillBackground(False)
+        self.binaryScan.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                      "")
+        self.binaryScan.setCheckable(False)
+        self.binaryScan.setObjectName("binaryScan")
+        self.grayScan = QtWidgets.QPushButton(Dialog)
+        self.grayScan.setGeometry(QtCore.QRect(280, 310, 151, 41))
+        self.grayScan.setAutoFillBackground(False)
+        self.grayScan.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                    "")
+        self.grayScan.setCheckable(False)
+        self.grayScan.setObjectName("grayScan")
+        self.blackAndWhitePDF = QtWidgets.QPushButton(Dialog)
+        self.blackAndWhitePDF.setGeometry(QtCore.QRect(510, 190, 151, 41))
+        self.blackAndWhitePDF.setAutoFillBackground(False)
+        self.blackAndWhitePDF.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                            "")
+        self.blackAndWhitePDF.setCheckable(False)
+        self.blackAndWhitePDF.setObjectName("blackAndWhitePDF")
+        self.grayPDF = QtWidgets.QPushButton(Dialog)
+        self.grayPDF.setGeometry(QtCore.QRect(510, 310, 151, 41))
+        self.grayPDF.setAutoFillBackground(False)
+        self.grayPDF.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                   "")
+        self.grayPDF.setCheckable(False)
+        self.grayPDF.setObjectName("grayPDF")
+        self.binaryPDF = QtWidgets.QPushButton(Dialog)
+        self.binaryPDF.setGeometry(QtCore.QRect(510, 250, 151, 41))
+        self.binaryPDF.setAutoFillBackground(False)
+        self.binaryPDF.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                     "")
+        self.binaryPDF.setCheckable(False)
+        self.binaryPDF.setObjectName("binaryPDF")
+        self.originalScanPDF = QtWidgets.QPushButton(Dialog)
+        self.originalScanPDF.setGeometry(QtCore.QRect(510, 70, 151, 41))
+        self.originalScanPDF.setAutoFillBackground(False)
+        self.originalScanPDF.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                           "")
+        self.originalScanPDF.setCheckable(False)
+        self.originalScanPDF.setObjectName("originalScanPDF")
+        self.wrapGrayPDF = QtWidgets.QPushButton(Dialog)
+        self.wrapGrayPDF.setGeometry(QtCore.QRect(510, 130, 151, 41))
+        self.wrapGrayPDF.setAutoFillBackground(False)
+        self.wrapGrayPDF.setStyleSheet("background-color: rgba(51, 156, 255,170);\n"
+                                       "")
+        self.wrapGrayPDF.setCheckable(False)
+        self.wrapGrayPDF.setObjectName("wrapGrayPDF")
         self.line = QtWidgets.QFrame(Dialog)
         self.line.setGeometry(QtCore.QRect(460, 20, 20, 341))
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
@@ -155,32 +157,93 @@ class Ui_Dialog(object):
         self.line.setObjectName("line")
 
         self.retranslateUi(Dialog)
+        self.binaryPDF.clicked.connect(self.dbinaryPDF)
+        self.binaryScan.clicked.connect(self.dbinaryScan)
+        self.blackAndWhitePDF.clicked.connect(self.dblackAndWhitePDF)
+        self.blackAndWhiteScan.clicked.connect(self.dblackAndWhiteScan)
+        self.blured.clicked.connect(self.dblured)
+        self.edged.clicked.connect(self.dedged)
+        self.gray.clicked.connect(self.dgray)
+        self.grayPDF.clicked.connect(self.dgrayPDF)
+        self.grayScan.clicked.connect(self.dgrayScan)
+        self.originalPhoto.clicked.connect(self.doriginalPhoto)
+        self.originalScan.clicked.connect(self.doriginalScan)
+        self.originalScanPDF.clicked.connect(self.doriginalScanPDF)
+        self.outliner.clicked.connect(self.doutliner)
+        self.wrapGrayPDF.clicked.connect(self.dwrapGrayPDF)
+        self.wrapGrayScan.clicked.connect(self.dwrapGrayScan)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.pushButton.setText(_translate("Dialog", "Original photo"))
-        self.pushButton_2.setText(_translate("Dialog", "Gray"))
-        self.pushButton_3.setText(_translate("Dialog", "Blurred"))
-        self.pushButton_4.setText(_translate("Dialog", "Edged"))
-        self.pushButton_5.setText(_translate("Dialog", "outliner"))
-        self.pushButton_6.setText(_translate("Dialog", "original scan"))
-        self.pushButton_7.setText(_translate("Dialog", "Warp Gray scan"))
-        self.pushButton_8.setText(_translate("Dialog", "black and white scan"))
+        self.originalPhoto.setText(_translate("Dialog", "Original photo"))
+        self.gray.setText(_translate("Dialog", "Gray"))
+        self.blured.setText(_translate("Dialog", "Blurred"))
+        self.edged.setText(_translate("Dialog", "Edged"))
+        self.outliner.setText(_translate("Dialog", "outliner"))
+        self.originalScan.setText(_translate("Dialog", "original scan"))
+        self.wrapGrayScan.setText(_translate("Dialog", "Warp Gray scan"))
+        self.blackAndWhiteScan.setText(_translate("Dialog", "black and white scan"))
         self.label.setText(_translate("Dialog", "select an option :"))
         self.label_2.setText(_translate("Dialog", "PDF options :"))
-        self.pushButton_10.setText(_translate("Dialog", "binary scan"))
-        self.pushButton_11.setText(_translate("Dialog", "gray scan"))
-        self.pushButton_9.setText(_translate("Dialog", "black and white scan"))
-        self.pushButton_12.setText(_translate("Dialog", "gray scan"))
-        self.pushButton_13.setText(_translate("Dialog", "binary scan"))
-        self.pushButton_14.setText(_translate("Dialog", "original scan"))
-        self.pushButton_15.setText(_translate("Dialog", "Warp Gray scan"))
+        self.binaryScan.setText(_translate("Dialog", "binary scan"))
+        self.grayScan.setText(_translate("Dialog", "gray scan"))
+        self.blackAndWhitePDF.setText(_translate("Dialog", "black and white scan"))
+        self.grayPDF.setText(_translate("Dialog", "gray scan"))
+        self.binaryPDF.setText(_translate("Dialog", "binary scan"))
+        self.originalScanPDF.setText(_translate("Dialog", "original scan"))
+        self.wrapGrayPDF.setText(_translate("Dialog", "Warp Gray scan"))
+
+    def doriginalPhoto(self):
+        pass
+
+    def dgray(self):
+        pass
+
+    def dblured(self):
+        pass
+
+    def dedged(self):
+        pass
+
+    def doutliner(self):
+        pass
+
+    def doriginalScan(self):
+        pass
+
+    def dwrapGrayScan(self):
+        pass
+
+    def dblackAndWhiteScan(self):
+        pass
+
+    def dbinaryScan(self):
+        pass
+
+    def dgrayScan(self):
+        pass
+
+    def dblackAndWhitePDF(self):
+        pass
+
+    def dgrayPDF(self):
+        pass
+
+    def dbinaryPDF(self):
+        pass
+
+    def doriginalScanPDF(self):
+        pass
+
+    def dwrapGrayPDF(self):
+        pass
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
