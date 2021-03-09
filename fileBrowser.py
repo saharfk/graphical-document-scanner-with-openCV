@@ -1,7 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 
-
 # you can copy and run this code
 
 class MainWindow(QMainWindow):
@@ -10,10 +9,10 @@ class MainWindow(QMainWindow):
         path = QFileDialog.getOpenFileName(self, 'Open a file', '',
                                            'All Files (*.*)')
         if path != ('', ''):
-            print("File path : " + path[0])
+            global g
+            g = path[0]
 
 
 app = QApplication(sys.argv)
 window = MainWindow()
-sys.exit(app.exec_())
-print('hiuh')
+print(g)
