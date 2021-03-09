@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import sys
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -241,12 +241,9 @@ class Ui_Dialog(object):
         pass
 
 
-if __name__ == "__main__":
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())
+app = QtWidgets.QApplication(sys.argv)
+Dialog = QtWidgets.QDialog()
+ui = Ui_Dialog()
+ui.setupUi(Dialog)
+Dialog.show()
+sys.exit(app.exec_())
