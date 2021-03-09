@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 def rectify(h):
     h = h.reshape((4, 2))
@@ -16,8 +18,20 @@ def rectify(h):
     return hnew
 
 
+class MainWindow(QMainWindow):
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        path = QFileDialog.getOpenFileName(self, 'Open a file', '',
+                                           'All Files (*.*)')
+        if path != ('', ''):
+            global g
+            g = path[0]
+
+
+app = QApplication(sys.argv)
+window = MainWindow()
 # add image here.
-image = cv2.imread('1.jpg')
+image = cv2.imread(g)
 
 # resize image so it can be processed
 # choose optimal dimensions such that important content is not lost
@@ -27,23 +41,23 @@ image = cv2.resize(image, (1500, 880))
 
 # creating copy of original image
 orig = image.copy()
-cv2.imshow("Original.jpg", orig)
+cv2.imshow("Original", orig)
 # ***********************
 
 # convert to grayscale and blur to smooth
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-cv2.imshow("Original Gray.jpg", gray)
+cv2.imshow("Original Gray", gray)
 # ********************************
 
 # blurred = cv2.GaussianBlur(gray, (5, 5), 0)
 blurred = cv2.medianBlur(gray, 5)
-cv2.imshow("Original Blurred.jpg", blurred)
+cv2.imshow("Original Blurred", blurred)
 # *******************************
 
 # apply Canny Edge Detection
 edged = cv2.Canny(blurred, 0, 50)
 orig_edged = edged.copy()
-cv2.imshow("Original Edged.jpg", orig_edged)
+cv2.imshow("Original Edged", orig_edged)
 # ******************************
 
 # find the contours in the edged image, keeping only the
@@ -67,9 +81,11 @@ pts2 = np.float32([[0, 0], [800, 0], [800, 800], [0, 800]])
 M = cv2.getPerspectiveTransform(approx, pts2)
 dst = cv2.warpPerspective(orig, M, (800, 800))
 
+imgWarpColored = cv2.warpPerspective(orig, M, (800, 800))
+cv2.imshow("originalscan", imgWarpColored)
 cv2.drawContours(image, [target], -1, (0, 255, 0), 2)
 dst = cv2.cvtColor(dst, cv2.COLOR_BGR2GRAY)
-cv2.imshow("Outline.jpg", image)
+cv2.imshow("Outline", image)
 cv2.imshow("doc grayscale", dst)
 # *****************************
 
