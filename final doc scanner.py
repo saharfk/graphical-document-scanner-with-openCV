@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import sys ,os
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog,QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
 import img2pdf
 from PIL import Image
@@ -226,7 +226,7 @@ class Ui_Dialog(object):
         img_path = os.path.join("q.png")
 
         # storing pdf path
-        pdf_path = os.path.join('dblackAndWhitePDF.pdf')
+        pdf_path = os.path.join('blackAndWhite.pdf')
 
         # opening image
         image = Image.open(img_path)
@@ -247,56 +247,76 @@ class Ui_Dialog(object):
         file.close()
 
         # output
-        print("Successfully made pdf file")
+        msg = QMessageBox()
+        msg.setWindowTitle("Success message")
+        msg.setText("blackAndWhite.pdf Successfully made pdf file")
+        x = msg.exec_()  # this will show our messagebox
 
 
     def dgrayPDF(self):
         cv2.imwrite("q.png", cv2.resize(thresh2, (600, 600)))
         img_path = os.path.join("q.png")
-        pdf_path = os.path.join("dgrayPDF.pdf")
+        pdf_path = os.path.join("gray.pdf")
         image = Image.open(img_path)
         pdf_bytes = img2pdf.convert(image.filename)
         file = open(pdf_path, "wb")
         file.write(pdf_bytes)
         image.close()
         file.close()
-        print("Successfully made pdf file")
+        # output
+        msg = QMessageBox()
+        msg.setWindowTitle("Success message")
+        msg.setText("gray.pdf Successfully made pdf file")
+        x = msg.exec_()  # this will show our messagebox
 
     def dbinaryPDF(self):
         cv2.imwrite("q.png", cv2.resize(thresh1, (600, 600)))
         img_path = os.path.join("q.png")
-        pdf_path = os.path.join("dbinaryPDF.pdf")
+        pdf_path = os.path.join("binary.pdf")
         image = Image.open(img_path)
         pdf_bytes = img2pdf.convert(image.filename)
         file = open(pdf_path, "wb")
         file.write(pdf_bytes)
         image.close()
         file.close()
-        print("Successfully made pdf file")
+        # output
+        msg = QMessageBox()
+        msg.setWindowTitle("Success message")
+        msg.setText("binary.pdf Successfully made pdf file")
+        x = msg.exec_()  # this will show our messagebox
 
     def doriginalScanPDF(self):
         cv2.imwrite("q.png", cv2.resize(thresh2, (600, 600)))
         img_path = os.path.join("q.png")
-        pdf_path = os.path.join("doriginalScanPDF.pdf")
+        pdf_path = os.path.join("originalScan.pdf")
         image = Image.open(img_path)
         pdf_bytes = img2pdf.convert(image.filename)
         file = open(pdf_path, "wb")
         file.write(pdf_bytes)
         image.close()
         file.close()
-        print("Successfully made pdf file")
+        # output
+        msg = QMessageBox()
+        msg.setWindowTitle("Success message")
+        msg.setText("originalScan.pdf Successfully made pdf file")
+        x = msg.exec_()  # this will show our messagebox
+
 
     def dwrapGrayPDF(self):
         cv2.imwrite("q.png", cv2.resize(dst, (600, 600)))
         img_path = os.path.join("q.png")
-        pdf_path = os.path.join("dwrapGrayPDF.pdf")
+        pdf_path = os.path.join("wrapGray.pdf")
         image = Image.open(img_path)
         pdf_bytes = img2pdf.convert(image.filename)
         file = open(pdf_path, "wb")
         file.write(pdf_bytes)
         image.close()
         file.close()
-        print("Successfully made pdf file")
+        # output
+        msg = QMessageBox()
+        msg.setWindowTitle("Success message")
+        msg.setText("wrapGray.pdf Successfully made pdf file")
+        x = msg.exec_()  # this will show our messagebox
 
 
 def rectify(h):
