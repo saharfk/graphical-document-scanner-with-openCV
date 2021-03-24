@@ -1,8 +1,10 @@
 import cv2
 import numpy as np
-import sys
+import sys ,os
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt5 import QtCore, QtGui, QtWidgets
+import img2pdf
+from PIL import Image
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -190,49 +192,111 @@ class Ui_Dialog(object):
         self.wrapGrayPDF.setText(_translate("Dialog", "Warp Gray scan"))
 
     def doriginalPhoto(self):
-        cv2.imshow("Original", orig)
+        cv2.imshow("Original", cv2.resize(orig, (600, 600)))
 
     def dgray(self):
-        cv2.imshow("Original Gray", gray)
+        cv2.imshow("Original Gray", cv2.resize(gray, (600, 600)))
 
     def dblured(self):
-        cv2.imshow("Original Blurred", blurred)
+        cv2.imshow("Original Blurred", cv2.resize(blurred, (600, 600)))
 
     def dedged(self):
-        cv2.imshow("Original Edged", orig_edged)
+        cv2.imshow("Original Edged", cv2.resize(orig_edged, (600, 600)))
 
     def doutliner(self):
-        cv2.imshow("Outline", image)
+        cv2.imshow("Outline", cv2.resize(image, (600, 600)))
 
     def doriginalScan(self):
-        cv2.imshow("originalscan", imgWarpColored)
+        cv2.imshow("originalscan", cv2.resize(imgWarpColored, (600, 600)))
 
     def dwrapGrayScan(self):
-        cv2.imshow("doc grayscale", dst)
+        cv2.imshow("doc grayscale", cv2.resize(dst, (600, 600)))
 
     def dblackAndWhiteScan(self):
-        cv2.imshow("black and white scan", th4)
+        cv2.imshow("black and white scan", cv2.resize(th4, (600, 600)))
 
     def dbinaryScan(self):
-        cv2.imshow("binary scan", thresh1)
+        cv2.imshow("binary scan", cv2.resize(thresh1, (600, 600)))
 
     def dgrayScan(self):
-        cv2.imshow("gray scan", thresh2)
+        cv2.imshow("gray scan", cv2.resize(thresh2, (600, 600)))
 
     def dblackAndWhitePDF(self):
-        pass
+        cv2.imwrite("q.png", cv2.resize(th4, (600, 600)))
+        img_path = os.path.join("q.png")
+
+        # storing pdf path
+        pdf_path = os.path.join('dblackAndWhitePDF.pdf')
+
+        # opening image
+        image = Image.open(img_path)
+
+        # converting into chunks using img2pdf
+        pdf_bytes = img2pdf.convert(image.filename)
+
+        # opening or creating pdf file
+        file = open(pdf_path, "wb")
+
+        # writing pdf files with chunks
+        file.write(pdf_bytes)
+
+        # closing image file
+        image.close()
+
+        # closing pdf file
+        file.close()
+
+        # output
+        print("Successfully made pdf file")
+
 
     def dgrayPDF(self):
-        pass
+        cv2.imwrite("q.png", cv2.resize(thresh2, (600, 600)))
+        img_path = os.path.join("q.png")
+        pdf_path = os.path.join("dgrayPDF.pdf")
+        image = Image.open(img_path)
+        pdf_bytes = img2pdf.convert(image.filename)
+        file = open(pdf_path, "wb")
+        file.write(pdf_bytes)
+        image.close()
+        file.close()
+        print("Successfully made pdf file")
 
     def dbinaryPDF(self):
-        pass
+        cv2.imwrite("q.png", cv2.resize(thresh1, (600, 600)))
+        img_path = os.path.join("q.png")
+        pdf_path = os.path.join("dbinaryPDF.pdf")
+        image = Image.open(img_path)
+        pdf_bytes = img2pdf.convert(image.filename)
+        file = open(pdf_path, "wb")
+        file.write(pdf_bytes)
+        image.close()
+        file.close()
+        print("Successfully made pdf file")
 
     def doriginalScanPDF(self):
-        pass
+        cv2.imwrite("q.png", cv2.resize(thresh2, (600, 600)))
+        img_path = os.path.join("q.png")
+        pdf_path = os.path.join("doriginalScanPDF.pdf")
+        image = Image.open(img_path)
+        pdf_bytes = img2pdf.convert(image.filename)
+        file = open(pdf_path, "wb")
+        file.write(pdf_bytes)
+        image.close()
+        file.close()
+        print("Successfully made pdf file")
 
     def dwrapGrayPDF(self):
-        pass
+        cv2.imwrite("q.png", cv2.resize(dst, (600, 600)))
+        img_path = os.path.join("q.png")
+        pdf_path = os.path.join("dwrapGrayPDF.pdf")
+        image = Image.open(img_path)
+        pdf_bytes = img2pdf.convert(image.filename)
+        file = open(pdf_path, "wb")
+        file.write(pdf_bytes)
+        image.close()
+        file.close()
+        print("Successfully made pdf file")
 
 
 def rectify(h):
@@ -260,8 +324,9 @@ class MainWindow(QMainWindow):
             g = path[0]
 
 
-app = QApplication(sys.argv)
+app = QtWidgets.QApplication(sys.argv)
 window = MainWindow()
+
 # add image here.
 image = cv2.imread(g)
 
@@ -326,12 +391,8 @@ ret, thresh2 = cv2.threshold(dst, 127, 255, cv2.THRESH_TOZERO)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-app = QtWidgets.QApplication(sys.argv)
 Dialog = QtWidgets.QDialog()
 ui = Ui_Dialog()
 ui.setupUi(Dialog)
 Dialog.show()
 sys.exit(app.exec_())
-
-
-
