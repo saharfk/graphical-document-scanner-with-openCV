@@ -8,7 +8,7 @@ if you want graphic download [this](https://github.com/saharfk/graphical-documen
 if you just want openCv click on [this](https://github.com/saharfk/graphical-document-scanner-/blob/main/scanner.py) 
 if you want final project click on [this](https://github.com/saharfk/graphical-document-scanner-/blob/main/final%20doc%20scanner.py) 
 
-# runnig :
+# running :
 ![image](https://user-images.githubusercontent.com/71727363/112385213-f71e1580-8d0c-11eb-825d-0b525128a8ea.png)
 
 
